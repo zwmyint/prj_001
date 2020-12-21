@@ -10,6 +10,7 @@ namespace ASPNetCore5WEBAPI.Controllers
     [Route("api/[controller]")]
     //[DebugResourceFilter] // added this globally at startup.cs
     [DebugActionFilter]
+    [TokenAuthenticationFilter] // this mean, every action method need Authentication
     public class ProductsController : ControllerBase
     {
         /* [HttpGet]
