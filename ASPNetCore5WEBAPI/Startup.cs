@@ -28,8 +28,11 @@ namespace ASPNetCore5WEBAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            // database type using Singleton
-            services.AddSingleton<ITokenManager, TokenManager>();
+            /* // database type using Singleton (mark as database)
+            services.AddSingleton<ITokenManager, TokenManager>(); */
+
+            // selfverification
+            services.AddTransient<ITokenManagerJWT, TokenManagerJWT>();
 
             // global DebugResourceFilter
             services.AddControllers( options => {
