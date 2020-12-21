@@ -1,6 +1,7 @@
 using System;
 using System.ComponentModel.DataAnnotations;
 using ASPNetCore5WEBAPI.Filters;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ASPNetCore5WEBAPI.Controllers
@@ -11,7 +12,8 @@ namespace ASPNetCore5WEBAPI.Controllers
     //[DebugResourceFilter] // added this globally at startup.cs
     [DebugActionFilter]
     //[TokenAuthenticationFilter] // this mean, every action method need Authentication
-    [TokenAuthenticationJWTFilter] // for JWT
+    //[TokenAuthenticationJWTFilter] // for JWT (custom)
+    [Authorize] // build in Authentication filter
     public class ProductsController : ControllerBase
     {
         /* [HttpGet]
